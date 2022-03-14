@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Description</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+    <nav id="navbar">
+        <a id="b1">Rottweiler</a>
+        <a class="active" id="b2">Beagle</a>
+        <a id="b3">Poodle</a>       
+        <a id="b4">German Shepherd</a>  
+    </nav>
+<main>
+
+    <img id="dogImage" src="images/beagle.png">
+    <table>
+        <tr>
+            <td><strong>Weight</strong></td>
+            <td>&nbsp&nbsp 10 - 11 kg</td>
+        </tr>
+        <tr>
+            <td><strong>Coat</strong></td>
+            <td>&nbsp&nbsp Short haired, hard coat of medium length</td>
+        </tr>
+        <tr>
+            <td><strong>Color</strong></td>
+            <td>&nbsp&nbsp&nbspMany colors</td>
+        </tr>
+
+    </table>
+    <h1 class="dogName">Beagle</h1>
+    <div id="dogDes">
+        The beagle is a breed of small scent hound, similar in appearance to the much larger foxhound. The beagle was developed primarily for hunting hare (beagling). Possessing a great sense of smell and superior tracking instincts, the beagle is the primary breed used as a detection dog for prohibited agricultural imports and foodstuffs in quarantine around the world. The beagle is intelligent. It is a popular pet due to its size, good temper, and a lack of inherited health problems.</div>
+    
+</main>
+    
+
+
+<body>
+    <script type="text/javascript">
+
+            const b1 = document.getElementById('b1');
+            const b2 = document.getElementById('b2');
+            const b3 = document.getElementById('b3');
+            const b4 = document.getElementById('b4');
+
+            b1.addEventListener("mouseenter", changeText1);
+            b2.addEventListener("mouseenter", changeText2);
+            b3.addEventListener("mouseenter", changeText3);
+            b4.addEventListener("mouseenter", changeText4);
+
+            b1.addEventListener("mouseenter", changeTitle1);
+          
+            function changeText1(){
+                document.getElementById('dogDes').innerHTML = "According to the FCI Standard, the Rottweiler is considered to be one of the oldest dog breeds. Its origin goes back to Roman times. These dogs were kept as herder or driving dogs. They marched over the Alps with the Roman legions, protecting the humans and driving their cattle.";
+                
+            }
+
+            function changeTitle1(){
+                document.getElementsByClassName('dogName').innerHTML = "Rottweiler"}
+
+            function changeText2(){
+                document.getElementById('dogDes').innerHTML = "The beagle is a breed of small scent hound, similar in appearance to the much larger foxhound. The beagle was developed primarily for hunting hare (beagling)."}
+
+            function changeText3(){
+                document.getElementById('dogDes').innerHTML = "The Poodle most likely originated in Germany, although it is also claimed to be from France. The Standard Poodle was originally used by wildfowl hunters to retrieve game from water. The smaller varieties of the breed were bred from the original in France where they were once commonly used as circus performers, but have become popular companion dogs."}
+
+                function changeText4(){
+                document.getElementById('dogDes').innerHTML = "German Shepherds are working dogs developed originally for herding sheep. Since that time, however, because of their strength, intelligence, trainability and obedience, German Shepherds around the world are often the preferred breed for many types of work, including assistance, search-and-rescue, police and military roles, and even acting."}
+    
+
+    
+
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,74 @@
+
+body{
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    ;
+}
+
+#headerText{
+    display: flex;
+    flex-direction: row;
+    height: 150px;
+    background-color: rgba(241, 241, 241, 0.87);
+}
+#headerText span{
+    padding: 50px 20px ;
+}
+
+#container{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: auto;
+    height: 300px;
+    padding-left: 10px;
+    padding-right: 20px;
+    border-radius: 5px;
+    padding-top: 40px;
+    background-color: rgba(241, 241, 241, 0.87);
+    border-color: aqua;
+    vertical-align: middle;
+}
+
+
+#container .containerLeft{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
+
+#container .containerRight{
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+    margin-left: 10px;
+
+}
+
+#container .containerRight input{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    max-width: 60rem;
+    min-width: 8rem;
+    height: 18vh;
+}
+
+#container .containerRight button{
+    background-color: rgb(7, 71, 131);
+    color: white;
+    margin-top: 5px;
+    width: fit-content;
+}
+
+::placeholder{
+    vertical-align: top;
+}
+
+h4 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

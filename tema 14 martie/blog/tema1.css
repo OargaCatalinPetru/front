@@ -1,0 +1,57 @@
+body{
+    width: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: rgba(232, 235, 235, 0.815);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+    position: sticky;
+    z-index: 999;
+    text-decoration: none;
+    transition: all 1s;
+}
+
+
+
+#header span{
+
+}
+
+#header .navbar li{
+    display: inline;
+    list-style: none;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+
+    
+#header .navbar a{
+    text-decoration: none;
+    padding: 10px 15px;
+
+    
+}
+
+
+#p_date .p_datei{
+    font-style: italic;
+    font-size: small;
+    align-items: ;
+    justify-content: ;
+}
+ #p1{
+     font-size: smaller;
+ }
+ #li_text{
+     text-decoration:wavy;
+     list-style:lower-greek;
+     text-decoration-line: ;
+     list-style:inside;
+ }
+
