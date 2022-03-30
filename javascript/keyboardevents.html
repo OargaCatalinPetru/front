@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Events</title>
+    <style>
+        .error {
+            background-color: solid, 2px, red;
+            border-color: solid, 2px, brown;
+        }
+
+    </style>
+
+    <script>
+
+        function preventPhoneNr(input){
+            let valid = true;
+            for (ch of input.value){
+                if (ch < "0" || ch > "9"){
+                    valid = false;
+                }
+                valid = valid && input.value.length === 10;
+                showError(input, valid, "Numarul de telefon nu are 10 cifre");
+            
+            }
+
+
+        }
+        function showError(input, valid){
+            if (valid){
+                input.Classlist.remove("error");
+                span.innherHTML = "";
+            }
+            else {
+                input.Classlist.add("error");
+                span.innherHTML = message;
+            }
+        }
+    </script>
+</head>
+<body>
+    
+    <input type="text"
+    oninput="console.log('oninput' + this.value)"
+    onkeydown="console.log('onkeydown'+ this.value)"
+    onkeypress="console.log(this);"
+    onchange="preventPhoneNr(this)"
+    onfocus="showError(this, true)"
+    />
+
+
+</body>
+</html>
+
+
+

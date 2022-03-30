@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        input.error{
+            border: 1px solid rgb(139, 30, 30);
+            background-color: rgb(248, 205, 205);
+        }
+
+
+    </style>
+    <script>
+    //     function par(nr){
+    //         if (nr%2===0){
+    //             return 'par';
+    //         } else return 'impar';
+    //     }
+
+    //     function clickMe(){
+    //         let input = document.querySelector("#numar"); //selecteaza primul element care returneaza acest selector
+    //    let numar = Number(input.value);
+    //    let parImpar= par(numar);
+    //    let div = document.querySelector("#result");
+    //    div.innerHTML = `Numarul ${numar} este <b>${parImpar}</b>`;
+    //     }
+
+//         function max(x,y){
+//             if (x>y){
+//                 return x;
+//             }
+//             return y;
+//         }
+
+
+//         function maxNr(){
+//             let input1 = document.querySelector("#numar1");
+//             let input2 = document.querySelector("#numar2");
+//             let numar1 = Number(input1.value);
+//             let numar2 = Number(input2.value);
+//             if(isNaN(input1)){
+//                 // inseama ca utilizatorul nu a scris ce trebe in casuta a;
+//                 input1.classList.add("error");
+//             }else{
+//                 input1.classList.remove("error");
+            
+            
+//             if(isNaN(input2)){
+//                 // inseama ca utilizatorul nu a scris ce trebe in casuta a;
+//                 input2.classList.add("error");
+            
+//             } else {
+//           input2.classList.remove("error");
+//         }
+        
+//        let maxNumber= max(numar1, numar2);
+//        let div = document.querySelector("#maxnumbereste");
+//        div.innerHTML = `Maximum dintre ${numar1} si ${numar2} este <b> ${maxNumber} </b>`;
+//     }
+// }
+        
+    
+// greutate 30 si 250 
+// inaltime 1 m si 2,2 m
+
+function indiceMasaCorporala(g, h) {
+        let indice = g / (h * h);
+        let tip;
+        if (indice < 20) {
+          tip = "subponderal";
+        } else if (indice < 25) {
+          tip = "normal";
+        } else if (indice < 30) {
+          tip = "supraponderal";
+        } else if (indice < 40) {
+          tip = "obez";
+        } else {
+          tip = "bolnav";
+        }
+        return tip;
+      }
+
+      function indiceM(){
+            let input1 = document.querySelector("#g");
+            let input2 = document.querySelector("#h");
+            let greutate = Number(input1.value);
+            let inaltime = Number(input2.value);
+        
+            if(isNaN(greutate) || greutate < 30 || greutate > 250){
+                // inseama ca utilizatorul nu a scris ce trebe in casuta a;
+                input1.classList.add("error");
+            } else {
+                input1.classList.remove("error");
+            }
+            
+            if(isNaN(inaltime) || inaltime < 1 || inaltime >2.2){
+                // inseama ca utilizatorul nu a scris ce trebe in casuta a;
+                input2.classList.add("error");
+            
+            } else {
+          input2.classList.remove("error");
+        }
+        
+       let tipul= indiceMasaCorporala(greutate, inaltime);
+       let div = document.querySelector("#tipul");
+       div.innerHTML = `Tipul vostru este ${tipul} </b>
+       si inaltimea de <b>${inaltime}</b> si greutatea de <b> ${greutate} </b>`;
+      }
+
+
+    
+
+    </script>
+</head>
+<body>
+    <div>Greutatea<input placeholder="greutate" type ="number" id="g"></div>
+    <div>Inaltimea<input placeholder="inaltime" type ="number" id="h"></div>
+    <button onclick="indiceM();">Afla tipul</button>
+    <div id="tipul"></div>
+
+
+
+    <!-- <input type ="text" id="numar1">
+    <input type ="text" id="numar2">
+    <button onclick="maxNr();">Maxnumber</button>
+    <div id="maxnumbereste"></div> -->
+
+    <!-- <input type="number" id="numar" step="100">
+    <button onclick="clickMe();">Click Me</button>
+    <div id="result"></div> -->
+</body>
+</html>

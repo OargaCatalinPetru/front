@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <script>
+        // let array = [2 ,3, 4, 5, 6];
+        // let array2 = [2, ,3, "ana are mere", "x, y, z"];
+        // let pozitii = [0, 1, 2, 3, 4, 5, 6];
+        // // ultimul index este cu -1 decat lungimea arrayului
+
+        // for (let value of array){
+        //     //codul de aici se executa pt fiecare iteratie (loop)
+
+        // }
+
+        // for (let value of pozitii){
+        //     //codul de aici se executa pt fiecare iteratie (loop)
+        //     console.log(value);
+        // }
+
+        // let toAdd = [2, -8, 20, 100, 2, -8, 20, 100,2, -8, 20, 100,2, -8, 20, 100];
+        // let rezultat = 0;
+        // for (let value of toAdd){
+        //     rezultat += value;
+        //     console.log(rezultat, value);
+        // }
+        
+        // for (let i=0; i < toAdd.length; i++){
+        //     let value = toAdd [i];
+        //     rezultat += value;
+        //     console.log(rezultat, value);
+        // }
+
+        // for (let i=toAdd.length-1; i >= 0; i--){
+        //     let value = toAdd [i];
+        //     rezultat += value;
+        //     console.log(rezultat, value);
+        // }
+
+        // /*
+        // for (primul pas (initializare) ; conditie de iterare ; cum sa trec la pasul urmator
+        // */
+
+        // for (let i = 1; i<=100; i++){
+        //     console.log(i);
+        // }
+
+        // for (let i = 0; i<=100; i+=2){
+        //     console.log(i);
+        // }
+
+        // nr de la 1 la 100
+        // cand ajungem la nr divizil cu 7 schimbam sensul
+
+      
+
+        // 73
+
+//         function contains(nr, what){
+//             // i = (i-i%10)/10;
+//           for(let i=nr; i>0; i=Math.floor(i/10)){
+//             if(i%10===7){
+//                 return true;
+//             }
+//           }
+//           return false;
+//         }
+//         console.log(contains(1253467, 7));
+
+//         function bolt(nr){
+//         let directie = true; // true e sprea dreapta, false spre stanga
+//         for  (let i=1; i<=100; i++){
+//             if(i%7===0 || contains(i)){
+//                 directie = !directie;
+//                 console.log(i + " BOLT");
+//             } else if(directie){
+//                 console.log (i + "spre dreapta")
+//             }else{
+//             console.log("spre stanga");
+//         }
+//     }
+// }
+//     console.log(bolt(50));
+
+
+//     let str = "Ana are mere";
+//     for (let it of str){
+//         console.log(str);
+//     }
+
+//     function inversa(str){
+//         let strInversat ="";
+//         for (let i = str.length -1; i >=0; i--){
+//             strInversat = strInversat + str[i];
+//                 }
+//                 return strInversat;
+//     }
+
+
+// console.log(inversa("Ana are mere"));
+
+function first20(){
+for (var input = 1; input <= 20; input++) {
+}console.log(input);
+}
+first20();
+
+function oddNr(){
+
+}
+// exercitiul 3
+function sum(arr){
+    let r = 0;
+    for (let value of arr){
+        r += value;
+    }
+    return r;
+}
+
+// exerciitul 4
+function max(arr){
+    let m = arr[0];//-Infinity;
+    for (let value of arr){
+       if(value > m){
+           m=value;
+       }
+    }
+    return m;
+}
+console.log(max[1,2,3,4,5]);
+
+//ex 5.
+function occurrences(arr, val){
+let nr = 0;
+
+    for (let value of arr){
+       if(value === val){
+           nr++
+       }
+    }
+    return nr;
+}
+console.log(occurrences([1, 2, 2, 4, 2]));
+
+function pattern(){
+    let str= "";
+    let p = 0;
+    for (let i=0; i<16;i++){
+       if((i>=4 && i<=7) || (i >= 12 && i <=16)) {
+           p=(i+1)%2;
+       }else{
+           p = i % 2;
+       }
+        str+=p;
+        if (i% 4 === 3){
+            str+= "\n";
+        }
+    }
+    return str;
+}
+console.log(pattern());
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

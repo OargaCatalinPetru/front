@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+//         function par(nr){
+//     let rezultat;
+//     if (nr % 2 ===0){
+//         return "par"
+//     }else{
+//         rezultat = "impar";
+//     }
+//     return rezultat;
+// }
+// console.log(par(5));
+
+// let r = par(10);
+// console.log(r);
+
+// function fDegree(nr){
+//     let gradeC;
+//     gradeC= nr * 2 + 30;
+//     return gradeC
+   
+// }
+// console.log(fDegree(5));
+// console.log(fDegree(10));
+// console.log(fDegree(50));
+
+// function maximNr(number1, number2){
+//     if (number1 > number2){
+//         return ${number1} + "este mai mare";
+//     }else{
+//         return ${number2} + "este mai mare";
+//     }
+// }
+
+
+// console.log(max(5,7));
+
+// function max3(num1, num2, num3){
+//     if(num1 >= num2 && num1 >= num3) {
+//     largest = num1;
+// }
+// else if (num2 >= num1 && num2 >= num3) {
+//     largest = num2;
+// }
+// else {
+//     largest = num3;
+// }
+
+
+// greutate/inalime/inaltime
+// La greutate de ...kg si inalitimea de ....m esti 
+// subponderal
+// su
+// // <20 - subponderal
+// // <25 - normal
+// // 30 supraponderal
+// // 40 obez 
+// // >40 esti bolnav
+// La greutate de 20 kg si inaltimea de 1.73 esti subponderal
+// formula este greutate / inaltime*inaltime
+
+
+// function mpg(v){
+//     let mile = 1.609344; //km
+//     let gallon = 3.78541178; //litri
+
+//     return ((gallon / mile)* 100) / v;
+// }
+
+// console.log(mpg(30));
+
+// function indiceM(g, h){
+//     let i = g/(h*h);
+//     let tip
+//     if (i<=20){
+//         tip = "subonderal";
+//     } else if (i <= 25){
+//         tip = "normal";
+//     }else if (i >= 30){
+//         tip = "supraponderal"
+//     }else if (i = 40){
+//         tip = "obez";
+//     }else if (i >= 40){
+//         tip = "bolnav"
+//     }
+//     return `La greutate de ${g} si inaltimea de ${h} sunteti ${tip}`;
+// }
+//     console.log (indiceM(120, 2));
+
+// functie aria unui dreptunghi
+
+// function arie(lung, lat){
+//     return lung * lat;
+    
+// }
+
+// console.log(arie(3,5));
+
+// console.log(arie(2));
+
+// function average(nota1, nota2, nota3, nota4, notat){
+//     let medie = (((nota1 + nota2 + nota3 + nota4)*3/4) + (notat*1/4)); ((a+b+c+d)/4*3+e)/4
+//     return medie;
+// }
+
+// console.log(average(5,6,7,8,1));
+
+// Write a JavaScript program to compute the sum of the two given integers. If the two values are same, then returns triple their sum
+
+// function sumB(a,b){
+//     if (a===b){
+//         return (a+b)*3;
+//     } else{
+//         return a+b;
+//     }
+// }
+// console.log(sumB(2,2));
+
+
+
+// function checkNr(a,b){
+//     if (a,b === 50){
+//         return true;
+//     } 
+//         if(a+b === 50){
+//         return true;
+//     } 
+//     else{
+//         return false;
+// }
+// }
+// console.log (checkNr(24,25));
+
+// function checkNr(a,b){
+//     if (a < 0 && b > 0){
+//         return "negativ";}
+//        else if (a >= 0 && b < 0){
+//            return "pozitiv"
+//        }
+//        if (b < 0 && a > 0){
+//         return "negativ";}
+//        else{
+//            return "pozitiv"
+//        }
+//     }
+     
+   
+// console.log (checkNr(9,-25));
+
+function produsImpare(num){
+        let produsOdd = 1;
+        let produsEven = 1;
+          for(var i = 1; i <= num; i++){
+            if(i > 0 && i % 2===0){
+            produsEven = num * i;
+          }
+          else {
+              produsOdd = num * i;
+          }
+          return produsOdd;
+      }
+    }    
+    console.log(produsImpare(5));
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
