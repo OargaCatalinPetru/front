@@ -121,10 +121,22 @@ function divizori(num){
         }
         return arr;
     }
+  }
 
 
 
 //11. O functie care verifica daca un numar este palindrom (ex: 121, 1234321) ("palindrom")
+function palindrom(num) {
+  var len = num.length;
+  if (num.length > 3){
+  for (var i = 0; i < len/2; i++) {
+    if (num[i] !== num[len - 1 - i]) {
+        return false;
+    }
+  }}
+  return true;
+ }
+
 //12.  O functie care sorteaza numerele pare dintr-un sir de numere primit ca parametru. ("sort")
 //13.  O functie care primeste ca parametru un array de numere. Aceasta sorteaza ascendent numerele pare si descendent numerele impare, in cadrul aceluiasi array primit ca parameru. ("sortAscDesc")
 //14.  O functie care primeste 2 parametri(un array si un numar). Folosind binary search verificati daca numarul primit ca parametru se gaseste in array. ("binarySearch")

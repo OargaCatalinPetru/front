@@ -74,23 +74,28 @@ function prim(N){
 
 // 7. O functie "sumaPrime" care primeste 1 parametru si returneaza suma primelor N numere prime (pentru N=5 trebuie sa returneze 2+3+5+7+11=28)
 
-function sumPrime(num) {
-    function isPrime(num) {
-      for (let i = 2; i <= Math.sqrt(num); i++) {
-        if (num % i == 0)
+function sumaPrime(num) {
+  
+    var prime = []; 
+    for(var i = 2; i <= num; i++) {
+      if(isPrime(i)) {
+          prime.push(i);
+      }      
+    }
+  
+    function isPrime(num2) {
+      for (var j = 2; j < num2; j++) {
+        if (num2% j === 0) {
           return false;
+        }
       }
       return true;
-    }
-    var suma = 0;
-    for(var i=2; i <= num; i++){   
-        if(isPrime(i)){
-        suma += i;
-    }
-    
-    return suma;
+    }  
+
+  return prime;
 }
-}
+  
+ 
 
 
   // 8. O functie "invers" care primeste un parametru de tip numar si intoarce inversul acestuia (ca numar) (123 => 321)
@@ -129,22 +134,68 @@ function contains(_array, x){
 
 // 11. O functie "maxArray" care primeste un array si returneaza valoarea maxima (ar trebui sa functioneze si pentru numere si pentru stringuri)
 
-function maxArray(_array){
-    return Math.max(..._array);
-}
+function maxArray(arr) {
+    var len = arr.length, max = -Infinity;
+    while (len--) {
+      if (Number(arr[len]) > max) {
+        max = Number(arr[len]);
+      }
+    }
+    return max;
+  };
+
 
 // 12. O functie "sumMinMax" care primeste un array de numere si returneaza suma dintre valoare maxima si valoare minima
 
-function sumMinMax(_array){
-    let min ;
-    let max ;
+
+function maxArray(arr){
+    return Math.max.apply(null, arr);
 }
+function minArray(arr){
+    return Math.min.apply(null, arr);
+}
+
+function sumMinMax(arr){
+    let result = maxArray(arr) + minArray(arr);
+    return result;
+}
+
 
 
 // 13. O functie "hasDuplicates" care primeste un array si returneaza daca exista duplicate intr-un array primit ca parametru (true/false)
 
+function hasDuplicates(arr) {
+    if (arr.some(x => arr.indexOf(x) !== arr.lastIndexOf(x))){
+        return false;
+    }else 
+        return true;
+}
+console.log(hasDuplicates(([1,2,3,4,5])));
+ 
+
 // 14. O functie "produsPozitive" care primeste un array si returneaza produsul numerelor pozitive intr-un array primit ca parametru
+function produsPozitive(arr) {
+    let total = 1;
+    for (var i = 0; i< arr.length; i++){
+        if ((arr[i]) > 0){
+        total = total * arr[i];
+    }}
+    return total;
+    }
+
 
 // 15. O functie "palindrom" care primeste un string si returneaza daca este palindrom (inversul == originalul, ex: "1234321", "55", "787") (true/false)
+
+function palindrom(str) {
+    var re = /[^A-Za-z0-9]/g;
+    str = str.toLowerCase().replace(re, '');
+    var len = str.length;
+    for (var i = 0; i < len/2; i++) {
+      if (str[i] !== str[len - 1 - i]) {
+          return false;
+      }
+    }
+    return true;
+   }
 
 
