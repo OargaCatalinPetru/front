@@ -43,7 +43,7 @@ console.log(max(2,15));
 function min(a, b){
     if (a<b){
         return a;
-    } elseif(b<a)
+    } (b<a)
     {
         return b;
     }
@@ -166,9 +166,9 @@ function sumMinMax(arr){
 
 function hasDuplicates(arr) {
     if (arr.some(x => arr.indexOf(x) !== arr.lastIndexOf(x))){
-        return false;
-    }else 
         return true;
+    }else 
+        return false;
 }
 console.log(hasDuplicates(([1,2,3,4,5])));
  
