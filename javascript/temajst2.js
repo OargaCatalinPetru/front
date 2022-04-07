@@ -1,53 +1,60 @@
 // 1. O functie "getDigits" care primeste un sir de caractere si returneaza cifrele din sirul respectiv
 
 
-function getDigits(car){
-    let carDigits = car.replace(/\D/g, "");
-
-    if (carDigits !== null){
-    return carDigits;
-    }else{
-    return "No number in the string";
-    }
+function getDigits(string) {
+  let numArray = string.split('').map(item => {
+    if (typeof +item === 'number' && !isNaN(+item)) return +item
+  })
+  return numArray.join('')
 }
+
+    
+
     
 
 // 2. O functie "getLetters" care primeste un sir de caractere si returneaza doar literele din sirul respectiv
 
-function getLetters(x){
-    let letters = x.replace(/[^a-zA-Z]+/g, '');
-
-    if (letters !== null){
-    return letters;
-    }else{
-    return "No letters in the string";
-    }
+function getLetters(a) {
+  var b = '';
+  for (var i = 0; i < a.length; i++) {
+      if (a[i] >= 'A' && a[i] <= 'z' && a[i] !== '^') b += a[i];
+  }
+  return b;
 }
+
+
 
 // 3. O functie "getFirst5Letters" care primeste un sir de caractere si returneaza primele 5 litere(daca exista)
 
-function getFirst5Letters(sirC){
-    let letters = sirC.replace(/[^a-zA-Z]+/g, '');
-    let fiveLet = letters.slice(0, 5);
-    if (letters !== null){
-        return fiveLet;
-    }return "No letters in the string";
+function getFirst5Letters(a) {
+  var b = '';
+  for (var i = 0; i < a.length; i++) {
+      if (a[i] >= 'A' && a[i] <= 'z' && a[i] !== '^') b += a[i];
+  }
+  return b.slice(0,5);
 }
+
+
 
 
 // 4. O functie "concatenate" care primeste o lista de siruri de caractere si returneaza sirurile concatenate
 
-function concatenate([]){
-    let concStr =  [...arguments].join('');
-    let result = concStr.replace(/\,/g, '');
+function concatenate(arr){
+    let result= [];
+    for (let i = 0; i<arr.length; i++){
+      result += arr[i];
+    }
     return result;
 }
 
 // 5. O functie "getAllDigits" care primeste o lista de siruri de caractere si returneaza cifrele din toate sirurile
 
-function getAllDigits([]){
-    let digits = [].replace(/\D/g, "").join('');
-    return digits
+function getAllDigits(a) {
+  var b = "";
+  for (var i = 0; i < a.length; i++) {
+      if (a[i] >= '0' && a[i] <= '9') b += a[i];
+  }
+  return b;
 }
 
 
@@ -111,33 +118,128 @@ function cmmmc(x, y) {
 
 //10.  Returneaza un array care sa contina toti divizorii unui numar (ex pentru 64: trebuie sa returneze [2,4,8,16,32]) ("divizori")
 
-function divizori(num){
-        let arr = [];
-        for (let i=1; i <= num/2; i++){
-           if(num % i === 0){
-               arr.push(num);
-        }else {
-            return null;
-        }
-        return arr;
+function divizori(integer) {
+
+  var result = [];
+  for(let i = 0; i < integer; i++) {
+    if(i !== 1 && i !== integer && integer % i == 0) {
+      result.push(i)
     }
   }
+   return result;
+  };
+        
+
 
 
 
 //11. O functie care verifica daca un numar este palindrom (ex: 121, 1234321) ("palindrom")
-function palindrom(num) {
-  var len = num.length;
-  if (num.length > 3){
-  for (var i = 0; i < len/2; i++) {
-    if (num[i] !== num[len - 1 - i]) {
+const palindrom = (number) => {
+  const string = number.toString();
+  for (let i = 0, j = string.length - 1; i < j; ++i, --j) {
+  if (string[i] !== string[j]) {
         return false;
-    }
-  }}
+      }
+  }
   return true;
- }
+};
 
 //12.  O functie care sorteaza numerele pare dintr-un sir de numere primit ca parametru. ("sort")
+
+
+function compareNumbers(a, b) {
+  return a - b;
+}
+
+function sort(a){
+  let ar = [];  
+  for (let i = 0; i < a.length; i++)
+  {
+
+    if((a[i]%2)==0)
+    ar.push(a[i]);  
+    ar.sort(compareNumbers);
+
+  }
+return ar;
+}
+  
+
+
 //13.  O functie care primeste ca parametru un array de numere. Aceasta sorteaza ascendent numerele pare si descendent numerele impare, in cadrul aceluiasi array primit ca parameru. ("sortAscDesc")
+function compareNumbers1(a, b) {
+  return a - b;
+}
+function compareNumbers2(a, b) {
+  return b - a;
+}
+
+function sortAscDesc(a){
+  let evens = [];  
+  let odds = [];
+  for (let i = 0; i < a.length; i++)
+  {
+    if((a[i]%2)==0){
+    evens.push(a[i]);  
+    evens.sort(compareNumbers1);
+  }
+  else {
+    odds.push(a[i]);
+    odds.sort(compareNumbers2);
+  }
+  }
+return evens.concat(odds);
+}
+  
+
 //14.  O functie care primeste 2 parametri(un array si un numar). Folosind binary search verificati daca numarul primit ca parametru se gaseste in array. ("binarySearch")
+function binarySearch(arr, a) {
+  var length = arr.length;
+  for (var i = 0; i < length; i++) {
+  if (arr[i] == a)
+   return true;
+  }
+  return false;
+ }
 //15.  O functie care implementeaza binary search pentru a verifica daca un numar se regaseste intr-un array. Dupa ce se termina executia functiei trebuie sa returnati de cate ori s-a apelat functia recursiv ("countBinarySearch")
+
+function countBinarySearch(array, element) {
+    let startIndex = 0;
+    let endIndex = array.length - 1;
+    let count = 0;
+    let occurrence = 0;
+
+    const result = {}
+
+   while(startIndex <= endIndex){
+        let middle = Math.floor((startIndex + endIndex)/2); 
+            let guessElement = array[middle];
+            count++;
+        if(guessElement === element){
+                occurrence++;
+
+          while(startIndex <= endIndex){
+
+              if(guessElement > element){
+                  endIndex = middle - 1;
+                  occurrence++;
+                  break;
+
+              } else {
+                  startIndex = middle + 1;
+                  occurrence++;
+                  break;
+              } 
+          } 
+
+        } else if (guessElement > element) {
+                endIndex = middle - 1;
+
+        } else {
+                startIndex = middle + 1;
+        }
+    }
+        result.occurrence = occurrence;
+        result.count = count;
+        return result;
+} 
