@@ -74,26 +74,33 @@ function prim(N){
 
 // 7. O functie "sumaPrime" care primeste 1 parametru si returneaza suma primelor N numere prime (pentru N=5 trebuie sa returneze 2+3+5+7+11=28)
 
-function sumaPrime(num) {
-  
-    var prime = []; 
-    for(var i = 2; i <= num; i++) {
-      if(isPrime(i)) {
-          prime.push(i);
-      }      
-    }
-  
-    function isPrime(num2) {
-      for (var j = 2; j < num2; j++) {
-        if (num2% j === 0) {
-          return false;
+function isPrime(value){
+    for(var i=2;i<value;i++){
+        if(value%i===0){
+            return false;
         }
-      }
-      return true;
-    }  
-
-  return prime;
+    }return value>1;
 }
+function sumaPrime(count){
+    var currNum=1;
+    var total=0;
+    for(var j=0;j<count;j++){
+        while(true){
+            if(isPrime(currNum)){
+                total+=currNum;
+                currNum++;
+                break;
+            }else{
+                currNum++;
+            }
+        }
+    }
+    return total;}
+
+
+
+
+
   
  
 
@@ -137,8 +144,8 @@ function contains(_array, x){
 function maxArray(arr) {
     var len = arr.length, max = -Infinity;
     while (len--) {
-      if (Number(arr[len]) > max) {
-        max = Number(arr[len]);
+      if ((arr[len]) > max) {
+        max = (arr[len]);
       }
     }
     return max;
@@ -186,16 +193,13 @@ function produsPozitive(arr) {
 
 // 15. O functie "palindrom" care primeste un string si returneaza daca este palindrom (inversul == originalul, ex: "1234321", "55", "787") (true/false)
 
-function palindrom(str) {
-    var re = /[^A-Za-z0-9]/g;
-    str = str.toLowerCase().replace(re, '');
-    var len = str.length;
-    for (var i = 0; i < len/2; i++) {
-      if (str[i] !== str[len - 1 - i]) {
+const palindrom = (number) => {
+    const string = number.toString();
+    for (let i = 0, j = string.length - 1; i < j; ++i, --j) {
+    if (string[i] !== string[j]) {
           return false;
-      }
+        }
     }
     return true;
-   }
-
+  };
 
