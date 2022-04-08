@@ -1,5 +1,4 @@
 //1. O functie "equals" care primeste 2 parametrii si returneaza daca cei 2 parametrii sunt egali, strict
-"use strict";
 function  equals(a, b){
     if (a === b){
         return true;
@@ -54,8 +53,8 @@ function min(a, b){
 
 
     function suma(N) {
-        var total = 0;
-          for(var i = 1; i <= N; i++){
+        let total = 0;
+          for(let i = 1; i <= N; i++){
             total += i;
           }
           return total;
@@ -64,7 +63,7 @@ function min(a, b){
 // 6. O functie "prim" care primeste 1 parametru si returneaza true/false daca N este numar prim sau nu (restul impartirii la 1 si la N ==0)
  
 function prim(N){
-        var prime = N != 1;
+        let prime = N != 1;
         for (let i = 2; i * i <= N; i++)
         if (N % i === 0)
         return false;
@@ -75,16 +74,16 @@ function prim(N){
 // 7. O functie "sumaPrime" care primeste 1 parametru si returneaza suma primelor N numere prime (pentru N=5 trebuie sa returneze 2+3+5+7+11=28)
 
 function isPrime(value){
-    for(var i=2;i<value;i++){
+    for(let i=2;i<value;i++){
         if(value%i===0){
             return false;
         }
     }return value>1;
 }
 function sumaPrime(count){
-    var currNum=1;
-    var total=0;
-    for(var j=0;j<count;j++){
+    let currNum=1;
+    let total=0;
+    for(let j=0;j<count;j++){
         while(true){
             if(isPrime(currNum)){
                 total+=currNum;
@@ -95,14 +94,9 @@ function sumaPrime(count){
             }
         }
     }
-    return total;}
+    return total;
+}
 
-
-
-
-
-  
- 
 
 
   // 8. O functie "invers" care primeste un parametru de tip numar si intoarce inversul acestuia (ca numar) (123 => 321)
@@ -123,7 +117,7 @@ function sumaPrime(count){
 
  function produsImpare(num){
         let produsOdd = 1;
-          for(var i = 1; i <= 2*num-1; i+=2){
+          for(let i = 1; i <= 2*num-1; i+=2){
          
             produsOdd *= i;
         
@@ -142,7 +136,7 @@ function contains(_array, x){
 // 11. O functie "maxArray" care primeste un array si returneaza valoarea maxima (ar trebui sa functioneze si pentru numere si pentru stringuri)
 
 function maxArray(arr) {
-    var len = arr.length, max = -Infinity;
+    let len = arr.length, max = -Infinity;
     while (len--) {
       if ((arr[len]) > max) {
         max = (arr[len]);
@@ -183,7 +177,7 @@ console.log(hasDuplicates(([1,2,3,4,5])));
 // 14. O functie "produsPozitive" care primeste un array si returneaza produsul numerelor pozitive intr-un array primit ca parametru
 function produsPozitive(arr) {
     let total = 1;
-    for (var i = 0; i< arr.length; i++){
+    for (let i = 0; i< arr.length; i++){
         if ((arr[i]) > 0){
         total = total * arr[i];
     }}
