@@ -15,8 +15,8 @@ function getDigits(string) {
 // 2. O functie "getLetters" care primeste un sir de caractere si returneaza doar literele din sirul respectiv
 
 function getLetters(a) {
-  var b = '';
-  for (var i = 0; i < a.length; i++) {
+  let b = '';
+  for (let i = 0; i < a.length; i++) {
       if (a[i] >= 'A' && a[i] <= 'z' && a[i] !== '^') b += a[i];
   }
   return b;
@@ -27,8 +27,8 @@ function getLetters(a) {
 // 3. O functie "getFirst5Letters" care primeste un sir de caractere si returneaza primele 5 litere(daca exista)
 
 function getFirst5Letters(a) {
-  var b = '';
-  for (var i = 0; i < a.length; i++) {
+  let b = '';
+  for (let i = 0; i < a.length; i++) {
       if (a[i] >= 'A' && a[i] <= 'z' && a[i] !== '^') b += a[i];
   }
   return b.slice(0,5);
@@ -50,8 +50,8 @@ function concatenate(arr){
 // 5. O functie "getAllDigits" care primeste o lista de siruri de caractere si returneaza cifrele din toate sirurile
 
 function getAllDigits(a) {
-  var b = "";
-  for (var i = 0; i < a.length; i++) {
+  let b = "";
+  for (let i = 0; i < a.length; i++) {
       if (a[i] >= '0' && a[i] <= '9') b += a[i];
   }
   return b;
@@ -73,7 +73,7 @@ function invertAllStrings(arr) {
 function factorial(num){
     if (num === 0 || num === 1)
     return 1;
-    for (var i = num-1; i >= 1; i--){
+    for (let i = num-1; i >= 1; i--){
         num *= i;
     }
     return num;
@@ -87,7 +87,7 @@ function cmmdc(x, y) {
     x = Math.abs(x);
     y = Math.abs(y);
     while(y) {
-      var t = y;
+      let t = y;
       y = x % y;
       x = t;
     }
@@ -108,7 +108,7 @@ function cmmmc(x, y) {
     x = Math.abs(x);
     y = Math.abs(y);
     while(y) {
-      var t = y;
+      let t = y;
       y = x % y;
       x = t;
     }
@@ -120,7 +120,7 @@ function cmmmc(x, y) {
 
 function divizori(integer) {
 
-  var result = [];
+  let result = [];
   for(let i = 0; i < integer; i++) {
     if(i !== 1 && i !== integer && integer % i == 0) {
       result.push(i)
@@ -194,8 +194,8 @@ return evens.concat(odds);
 
 //14.  O functie care primeste 2 parametri(un array si un numar). Folosind binary search verificati daca numarul primit ca parametru se gaseste in array. ("binarySearch")
 function binarySearch(arr, a) {
-  var length = arr.length;
-  for (var i = 0; i < length; i++) {
+  let length = arr.length;
+  for (let i = 0; i < length; i++) {
   if (arr[i] == a)
    return true;
   }
