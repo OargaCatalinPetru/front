@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+</head>
+<body>
+    <h1>Agenda</h1> 
+    <div class="container">
+        <form id = "form" onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+        <label class="validation-error hide" id="fullNameValidationError">This field is required.</label>
+        <div><label>Nume: &nbsp;</label><input id="inputName" type="text" name="userName"></div>
+        <Br><Br>
+        <div><label>Numar: &nbsp;</label><input id="inputNum" type="number" name="userNum"></div>
+        <br><br>
+        <button id="addBtn" type="submit">Adauga</button>
+        </form>
+            <table class="list hide" id="employeeList">
+                <thead>
+                    <tr>
+                        <th>Full Name</th>
+                        <th>Phone number</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </td>
+    </tr>
+</table>
+
+        </div>
+    </div>
+
+</body>
+</html>

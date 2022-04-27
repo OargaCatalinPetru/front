@@ -1,0 +1,15 @@
+body{
+    margin: 0 auto;
+    background-color: rgb(142, 217, 255);
+
+}
+
+h2{
+    padding: 20px 30px;
+}
+
+.foodContainer{
+    padding: 10px 15px;
+    margin-left: 30px;
+    
+}

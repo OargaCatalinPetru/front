@@ -1,0 +1,74 @@
+html, body{
+    width: 50%;
+    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(255, 231, 197);
+}
+
+h1{
+    justify-items: center;
+    align-content: center;
+}
+.container{
+    width: 360px;
+    background-color: rgb(255, 207, 140);
+    padding: 20px 30px;
+    border-radius: 5px;
+}
+
+#inputName{
+    background-color: rgb(255, 231, 197);
+    width: 300px;
+    height: 46px;
+    border: 1px solid black;
+    outline: none;
+    font-size: 25px;
+    vertical-align: middle;
+}
+#inputNum{
+    background-color: rgb(255, 231, 197);
+    width: 300px;
+    height: 46px;
+    border: 1px solid black;
+    outline: none;
+    font-size: 25px;
+    vertical-align: middle;
+}
+
+
+#addBtn{
+    color: white;
+    background-color: rgb(30, 86, 190);
+    border-radius: 5px;
+    height: 50px;
+    width: 100px;
+    border: 1px solid black;
+    vertical-align: middle;
+}
+
+.hidden{
+    display: none;
+}
+
+
+#listContainer{
+margin-top: 50px;
+}
+
+.list{
+    padding: 30px 25px;
+    margin-top: 20px;
+    background-color: rgb(255, 207, 140);
+    width: 100%;
+    border-collapse: collapse;
+
+}
+
+label.validation-error{
+    color:   red;
+    margin-left: 5px;
+}
+
+.hide{
+    display:none;
+}
