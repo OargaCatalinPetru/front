@@ -1,0 +1,8 @@
+numele fiecarui produs din lista, contine un link catre pagina de detalii a produsului adaugat in cos 
+
+
+sa modificam cantitatea unui produs adaugat in cos (increase/decrease)
+
+
+acesata pagina primeste id-ul produsului ca si query parameter(ex: details.html?id=0, unde 0 este id-ul produsului)
+

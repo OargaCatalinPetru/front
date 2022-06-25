@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,100;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/global_style.css">
+    <link rel="stylesheet" href="sidebar.css">
+    <link rel="stylesheet" href="createproduct.css">
+ 
+  <title>Document</title>
+</head>
+<body>
+  <div>
+
+ 
+  <div class='main_container'>
+    <div class='sidebar'>
+      <div>
+        <h3>DASHBOARD</h3>
+        <h4>UserName</h4>
+      </div>
+      <h5>ADMIN</h5>
+      <ul>
+        <li>        
+          <a href="/dashboard.html"><img src="/Img/dashboard/shoppingcart.png" alt="product icon">Products</a>         
+        </li>
+        <li class='current' >
+          <a href="/dashboard/sections.html"><img src="/Img/dashboard/todo.png" alt="add product icon">Sections</a>   
+        </li>
+        <li>
+          <a href="./orders.html"> <img src="/Img/dashboard/userIcon.png" alt="user icon">Orders</a>     
+        </li>
+        <li >
+          <a href="/dashboard/createproduct.html"><img src="/Img/dashboard/addIcon.png" alt="add product icon">Add Product</a>   
+        </li>
+        <li >
+         <a href="/dashboard/createSection.html"><img src="/Img/dashboard/addIcon.png" alt="add product icon">Add Section </a> 
+        </li>
+  
+      </ul>
+      <h5>SETTINGS</h5>
+      <ul>
+        <li >        
+          <a href=""><img src="/Img/dashboard/settingsIcon.png" alt="product icon">Log Out </a>       
+        </li>
+        
+      </ul>
+    </div>
+    
+   
+    <div class='form_container'> 
+      <div class='title'>
+
+        <h1>Editar Sección</h1>
+      </div>
+       <form action="" id='form'>
+        <div class='nombrePrecio'>
+           <label for="">Título</label>
+           <input type="text" id='titulo'>      
+           <select id='categorias'>
+            
+          </select>        
+        </div>   
+      
+        
+        <button type='submit' id='btn'>
+          Editar
+        </button>       
+      </form>
+    </div>
+    <div class='alert' id='alert'>
+      <img src="/Img/markIcon.png" alt="markicon">
+      <p id='alert_msg'></p>
+    </div>
+  </div>
+  </div> 
+  <script src="./updateSection/updatesection.js"></script>
+</body>
+</html>

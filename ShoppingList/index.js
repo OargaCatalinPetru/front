@@ -1,5 +1,7 @@
 
-var selectedRow = null
+var selectedRow = null;
+var complete = false;
+var list = [];
 
 function readFormData(){
     let formData = {};
@@ -21,14 +23,14 @@ function onFormSubmit() {
 }
 
 
-function insertNewRecord(data) {
+function insertNewRecord(formData) {
     var table = document.getElementById("employeeList").getElementsByTagName('tbody')[0];
     var newRow = table.insertRow(table.length);
     cell1 = newRow.insertCell(0);
-    cell1.innerHTML = data.name;
+    cell1.innerHTML = `<div id="selectedInput"> ${formData.name}`;
     cell2 = newRow.insertCell(1);
     cell2.innerHTML = `<button onclick="markItem();"> &nbsp;&nbsp;&nbsp;  Mark as buyed </button>`;
-    
+    list.push(formData.name);
 }
 
 
@@ -47,13 +49,6 @@ function updateRecord(formData) {
     selectedRow.cells[0].innerHTML = formData.name;
 }
 
-function onDelete(td) {
-    if (confirm('Are you sure to delete this record ?')) {
-        row = td.parentElement.parentElement;
-        document.getElementById("employeeList").deleteRow(row.rowIndex);
-        resetForm();
-    }
-}
 function validate() {
     isValid = true;
     if (document.getElementById("inputName").value == "") {
@@ -68,23 +63,29 @@ function validate() {
 }
 
 function markItem(){
+    elem = document.getElementById("selectedInput");
+    if (selectedRow === null ){
+        elem.classList.add("marked");
+    }
+    else {
+        elem.classList.remove("marked");
+    }
+    complete = true;
     
-    document.getElementById("inputName").classList.add('marked');
-
-
-
 }
 
-function sortAsc (a,b) {
-    if (a.formData.name.toLowerCase() < b.formData.name.toLowerCase()){
+function sortAsc () {
+    list.sort(sortList);
+    };
+
+function sortList (a, b){
+    if (a.name < b.name){
         return -1;
+    } else if (a.name > b.name){
+        return 1
     }
-    if (a.formData.name.toLowerCase() > b.formData.name.toLowerCase()){
-    return 1;
-    }
-    else{
-        return 0;
-        
-    }
-    
-};
+    else {
+        return 0
+}
+}
+ 

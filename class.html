@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP</title>
+
+    <script>
+        class Masina {
+            constructor(tipMasina, culoare){
+                this.tipMasina = tipMasina;
+                this.culoare = culoare;
+                this.viteza = 0;
+
+            }
+            accelereaza(){
+                this.viteza++;
+            }
+            franeaza(){
+                this.viteza--;
+            }
+
+        }
+
+       let masina = new Masina("Opel", "negru");
+       let masina3 = new Masina("BMW", "alba");
+       console.log(masina);
+        console.log(masina3);
+        let masina2 = {
+            tipMasina: "Opel",
+            culoare: "negru",
+            viteza: 0
+        }
+        console.log(masina2);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

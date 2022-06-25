@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./Img/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,100;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="./styles/sidebar.css" />
+    <link rel="stylesheet" href="./styles/global_style.css" />
+    <link rel="stylesheet" href="./index/mainpage.css" />
+    <link rel="stylesheet" href="./productCart/productCart.css">
+    
+    <title>Outlet</title>
+  </head>
+  <body>
+
+    <div class="nav-small" >
+      <ul>
+           <li>
+            <a  href='index.html'>Home</a>
+          </li>
+          <li>
+            <a href="/dashboard.html">Admin</a>
+          </li>
+          <li>            
+            <a  href="index.html"> Products</a>        
+          </li>               
+      </ul>
+  </div>
+    
+          
+        </button>
+      </div>
+      
+  </div>
+
+
+    <div class="container">      
+      <div class="nav__container">
+        <nav class="navbar__content">
+          <img src="/Img/hero.jpg" alt="hero" />
+       
+          <a  class="pseudo" href="/dashboard.html">Admin</a>
+          <a  class="pseudo" href="/index.html">Home</a>
+          <a href="#main__title"> <p id='pLink' >Products</p></a>
+        
+          
+            <button class='nav_btn' id='nav_btn'>
+              <div class='cart_quantity_container'> 
+                <p id='cart_quantity'>0</p>
+              </div>
+              <img  src="./Img/cart.png" alt="" /> 
+            </button>           
+          
+        </nav>
+      </div>
+      <div class="main__title" id='main__title'>
+        <h1 >Nuestros Productos</h1>
+        <hr />
+      </div>
+      <div class="noLoading" id="loading">
+        <h1>Cargando...</h1>
+        <img src="/Img/landaLoading.gif" alt="" />
+      </div>
+      <div class="noError" id="error">
+        <h1>Se Produjo un error, intenalo de nuevo.</h1>
+      </div>
+      <div class='alert' id='alert'>
+        <img src="/Img/markIcon.png" alt="markicon">
+        <p id='alert_msg'></p>
+      </div>
+      
+    </div>
+    <footer class="footer__content">
+      <div class='footer'>
+        <div>
+          
+        </div>
+        <div>
+          <ul>
+            <li>
+            </li>          
+          </ul>
+        </div>
+        <ul>
+          <li>
+            <div id='map' class='map'></div>            
+          </li>
+        </ul>
+        
+      </div>
+    </footer>
+    <script src="./index/mainpage.js"></script>
+    <script src="./globalJs/globaljs.js"></script>
+  </body>
+</html>
