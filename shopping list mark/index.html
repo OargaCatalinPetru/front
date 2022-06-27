@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Shopping List</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <style>
+    * {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+button, input[type="text"] {
+  padding: 5px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+#shopping-list-item {
+  width: 250px;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.shopping-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.shopping-list > li {
+  margin-bottom: 20px;
+  border: 1px solid grey;
+  padding: 20px;
+}
+
+.shopping-item {
+  display: block;
+  color: grey;
+  font-style: italic;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.shopping-item__checked {
+  text-decoration: line-through;
+}
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Shopping List</h1>
+
+    <form id="js-shopping-list-form">
+      <input type="text" name="shopping-list-entry" id="shopping-list-entry">
+      <button type="submit">ADD</button>
+    </form>
+
+    <ul class="shopping-list">
+    
+    </ul>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script>
+    $("#js-shopping-list-form").on('submit', function(event) {
+    event.preventDefault();
+		let text = $('#shopping-list-entry').val();
+    const html = `
+    <li>
+        <span class="shopping-item">${text}</span>
+        <div class="shopping-item-controls">
+          <button class="shopping-item-toggle">
+            <span class="button-label">check</span>
+          </button>
+          <button class="shopping-item-delete">
+            <span class="button-label">delete</span>
+          </button>
+        </div>
+    </li>`
+    $('.shopping-list').append(html);
+    $('#shopping-list-entry').val('');
+});
+
+$('.shopping-list').on('click', '.shopping-item-delete', function (event) {
+  $(this).closest('li').remove();
+});
+
+$('.shopping-list').on('click', '.shopping-item-toggle', function (event) {
+  $(this).closest('li').toggleClass('shopping-item__checked')
+});
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>
