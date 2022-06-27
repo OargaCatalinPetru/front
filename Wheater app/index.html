@@ -1,26 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wheather App</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
-</head>
-<body>
-    <div id="userInput"></div>
-    <div id="wheaterNow">
-        <div id="icon"></div>
-        <div>Descriere</div>
-        <div>Umiditate</div>
-        <div>Presiune</div>
-        <div>Temperatura curenta</div>
-        <div>Minima zilei</div>
-        <div>Maxima zilei</div>
-    </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather APP</title>
+    <style>
+      * {
+        margin: 30px;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      }
+ 
 
-    <div>Prognoza meteo</div>
+      input {
+        height: 30px;
+        text-align: center;
+        font-size: 15px;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      }
     
-</body>
+      input::placeholder {
+        border: none;
+        color: black;
+        font-size: 20px;
+        font-weight: 700;
+      }
+      #searchdiv {
+        margin-top: 20px;
+        text-align: center;
+      }
+      button {
+        height: 30px;
+        width: 100px;
+    
+      }
+      button:hover {
+        box-shadow: 13;
+      }
+      #data {
+        font-size: 15px;
+        font-weight:lighter;
+      }
+      #sevendata {
+        display: flex;
+      }
+      #second {
+        display: flex;
+        height: 350px;
+        justify-content: space-evenly;
+        margin-left: 50px;
+        margin-right: 100px;
+        margin-bottom: 15px;
+      }
+      #sevendata > div {
+        border: 2px solid black;
+        border-radius: 5px;
+        margin-left: 20px;
+        text-align: center;
+      }
+      #sevendata > div > p {
+        margin-top: 15px;
+      }
+      #second > #data {
+        width: 220px;
+      }
+      #second > #data > p {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="searchdiv">
+      <input type="text" id="city" placeholder="Alege orasul" />
+      <button onclick="getweather()">Search</button>
+    </div>
+    <div id="second">
+      <div id="data"></div>
+
+      <div id="mymap"></div>
+    </div>
+    <div id="sevendata"></div>
+  </body>
 </html>
+
+<script>
+  let data_div = document.getElementById("data");
+  async function getweather() {
+    try {
+      let city = document.getElementById("city").value;
+      let response = await fetch(
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=14073563251c82d4c2522e923a4a1723&units=metric`
+      );
+      let data = await response.json();
+      console.log(data);
+      showWeather(data);
+    } catch (error) {
+      console.log("error");
+    }
+  }
+
+  function showWeather(weather) {
+    data_div.innerText = "";
+    let cd = document.createElement("p");
+    cd.innerText = new Date();
+
+    let temp = document.createElement("p");
+    temp.innerText = `Temperature: ${weather.main.temp}°C`;
+
+    let wind_speed = document.createElement("p");
+    wind_speed.innerText = `Wind Speed: ${weather.wind.speed}°`;
+
+    let longitude = document.createElement("p");
+    longitude.innerText = `Longitude: ${weather.coord.lon}`;
+    let latitude = document.createElement("p");
+    var lat = weather.coord.lat;
+    var lon = weather.coord.lon;
+    latitude.innerText = `Latitude: ${weather.coord.lat}`;
+    data_div.append(cd, temp, wind_speed, longitude, latitude);
+    getsevendayweather(lat, lon);
+    getmap();
+  }
+
+  let seven_data_div = document.getElementById("sevendata");
+  async function getsevendayweather(lat, lon) {
+    try {
+      let response = await fetch(
+        `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude={part}&appid=14073563251c82d4c2522e923a4a1723&units=metric`
+      );
+
+      let data = await response.json();
+
+      showsevendayweather(data);
+
+      console.log(data.daily);
+    } catch (error) {
+      console.log("error");
+    }
+  }
+
+  function showsevendayweather(data) {
+    sevendata.innerText = "";
+    const tz = data.timezone_offset;
+    data.daily.splice(0, 1);
+    data.daily.forEach(function (day) {
+      let div = document.createElement("div");
+
+      let img = document.createElement("img");
+      img.src = `http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`;
+
+      let dat = document.createElement("p");
+      dat.innerText = "Date" + " " + new Date(day.dt * 1000 - tz * 1000);
+
+      let dayTemp = document.createElement("p");
+
+      dayTemp.innerText =
+        "Sunrise" + " " + new Date(day.sunrise * 1000 - tz * 1000);
+
+      let dayPressure = document.createElement("p");
+      dayPressure.innerText = "Temperature" + " " + new Date(day.pressure * 1000 - tz * 1000);
+
+      div.append(img, dayTemp);
+      sevendata.append(div);
+    });
+  }
+
+  function getmap() {
+    let city = document.getElementById("city").value;
+    let mp = document.getElementById("mymap");
+    mp.innerHTML = `<iframe
+            width="600"
+            height="350"
+            id="gmap_canvas"
+            src="https://maps.google.com/maps?q=${city}&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            frameborder="0"
+            scrolling="no"
+            marginheight="0"
+            marginwidth="0"
+          ></iframe
+          ><a href="https://2piratebay.org"></a><br />`;
+  }
+</script>
